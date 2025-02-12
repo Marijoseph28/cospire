@@ -1,8 +1,8 @@
 let userConfig = undefined
 try {
-  userConfig = await import('./v0-user-next.config')
+  userConfig = await import('./v0-user-next.config.js')
 } catch (e) {
-  // ignore error
+  // Ignore error
 }
 
 /** @type {import('next').NextConfig} */
@@ -16,10 +16,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  module.exports = {
-  output: "export",
-},
-
+  output: "export", // ✅ Corrected this line
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
@@ -27,26 +24,20 @@ const nextConfig = {
   },
 }
 
+// ✅ Merge user config if it exists
 mergeConfig(nextConfig, userConfig)
 
 function mergeConfig(nextConfig, userConfig) {
-  if (!userConfig) {
-    return
-  }
+  if (!userConfig) return
 
   for (const key in userConfig) {
-    if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
-    ) {
-      nextConfig[key] = {
-        ...nextConfig[key],
-        ...userConfig[key],
-      }
+    if (typeof nextConfig[key] === 'object' && !Array.isArray(nextConfig[key])) {
+      nextConfig[key] = { ...nextConfig[key], ...userConfig[key] }
     } else {
       nextConfig[key] = userConfig[key]
     }
   }
 }
 
+// ✅ Export default properly
 export default nextConfig
