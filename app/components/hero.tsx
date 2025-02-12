@@ -6,7 +6,7 @@ export function Hero() {
     <section id="home" className="min-h-screen pt-16 flex flex-col items-center justify-center text-center px-4">
       <div className="relative w-40 h-40 mb-8">
         <Image
-          src="/my-pic.jpg"
+          src="./my-pic.jpg"
           alt="Maria Veena Joseph"
           fill
           className="rounded-full object-cover border-4 border-purple-500"
