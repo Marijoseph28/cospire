@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone } from "lucide-react"
-import { sendEmail } from "../actions/send-email"
 import { useToast } from "@/components/ui/use-toast"
 
 export function Contact() {
@@ -16,25 +15,35 @@ export function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    const formData = new FormData(e.currentTarget)
-    const response = await sendEmail(formData)
+    const form = e.currentTarget
+    const data = new FormData(form)
 
-    setIsSubmitting(false)
-
-    if (response.success) {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+    try {
+      const response = await fetch("https://formspree.io/f/movjnlgd", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
       })
-      if (response.success && e.currentTarget) {
-        e.currentTarget.reset();
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        })
+        form.reset()
+      } else {
+        throw new Error("Form submission failed")
       }
-    } else {
+    } catch (error) {
       toast({
         title: "Error",
         description: "There was an error sending your message. Please try again.",
         variant: "destructive",
       })
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
