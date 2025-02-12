@@ -5,18 +5,37 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone } from "lucide-react"
+import { sendEmail } from "../actions/send-email"
+import { useToast } from "@/components/ui/use-toast"
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { toast } = useToast()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log(formData)
+    setIsSubmitting(true)
+
+    const formData = new FormData(e.currentTarget)
+    const response = await sendEmail(formData)
+
+    setIsSubmitting(false)
+
+    if (response.success) {
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      })
+      if (response.success && e.currentTarget) {
+        e.currentTarget.reset();
+      }
+    } else {
+      toast({
+        title: "Error",
+        description: "There was an error sending your message. Please try again.",
+        variant: "destructive",
+      })
+    }
   }
 
   return (
@@ -43,29 +62,21 @@ export function Contact() {
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <Input
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="bg-gray-700/50 border-gray-600"
-                required
-              />
+              <Input name="name" placeholder="Your Name" className="bg-gray-700/50 border-gray-600" required />
             </div>
             <div>
               <Input
+                name="email"
                 type="email"
                 placeholder="Your Email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="bg-gray-700/50 border-gray-600"
                 required
               />
             </div>
             <div>
               <Textarea
+                name="message"
                 placeholder="Your Message"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="bg-gray-700/50 border-gray-600 min-h-[150px]"
                 required
               />
@@ -73,8 +84,9 @@ export function Contact() {
             <Button
               type="submit"
               className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700"
+              disabled={isSubmitting}
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>
         </div>
