@@ -1,7 +1,10 @@
+import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+import { ImagePreview } from "./image-preview"
 
 export function Projects() {
+  const [previewImage, setPreviewImage] = useState<{ src: string; alt: string } | null>(null)
   const projects = [
     {
       title: "Aqaar – Real Estate Development in Ajman",
@@ -36,19 +39,22 @@ export function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-20 px-4">
+     <section id="projects" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <Card key={index} className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-colors">
               <CardContent className="p-4">
-                <div className="aspect-video relative mb-4">
+                <div
+                  className="aspect-video relative mb-4 cursor-pointer overflow-hidden rounded-lg"
+                  onClick={() => setPreviewImage({ src: project.image, alt: project.title })}
+                >
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
-                    className="object-cover rounded-lg"
+                    className="object-cover rounded-lg transition-transform duration-300 hover:scale-110"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
@@ -58,6 +64,13 @@ export function Projects() {
           ))}
         </div>
       </div>
+      {previewImage && (
+        <ImagePreview
+          src={previewImage.src || "/placeholder.svg"}
+          alt={previewImage.alt}
+          onClose={() => setPreviewImage(null)}
+        />
+      )}
     </section>
   )
 }
