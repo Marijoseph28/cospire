@@ -1,99 +1,144 @@
-"use client"
+'use client';
 
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import Image from 'next/image';
 
-export function Nav() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
+export default function Navbar() {
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
 
-  const menuItems = [
-    { label: "Home", id: "home" },
-    { label: "Skills", id: "skills" },
-    { label: "Projects", id: "projects" },
-    { label: "Contact", id: "contact" },
-  ]
+  const servicesRef = useRef<HTMLLIElement>(null);
+  const solutionsRef = useRef<HTMLLIElement>(null);
 
+  // Close dropdowns when clicking outside
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = menuItems.map((item) => document.getElementById(item.id))
-
-      const scrollPosition = window.scrollY + 100
-
-      sections.forEach((section) => {
-        if (section) {
-          const sectionTop = section.offsetTop
-          const sectionHeight = section.clientHeight
-
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            setActiveSection(section.id)
-          }
-        }
-      })
+    function handleClickOutside(event: MouseEvent) {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+      if (solutionsRef.current && !solutionsRef.current.contains(event.target as Node)) {
+        setIsSolutionsOpen(false);
+      }
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setIsOpen(false)
-    }
-  }
+  // Active Link Class
+  const getActiveClass = (path: string) =>
+    pathname === path ? "text-[#DB1139] font-semibold" : "text-black hover:text-[#DB1139]";
 
   return (
-    <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md z-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
-            Maria Veena Joseph
-          </span>
+    <nav className="bg-white shadow-md p-4 fixed w-full top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link href="/" className="text-xl font-bold text-gray-900">
+          <Image src="/images/cospire-logo.png" alt="cospire-logo" width={100} height={22} />
+        </Link>
+        
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden text-gray-900" 
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-sm transition-colors ${
-                  activeSection === item.id ? "text-purple-400" : "text-gray-300 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-6 text-[18px]">
+          <li><Link href="/" className={getActiveClass("/")}>Home</Link></li>
+          <li><Link href="/about" className={getActiveClass("/about")}>About Us</Link></li>
 
-          {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X /> : <Menu />}
-          </Button>
-        </div>
+          {/* Services Dropdown */}
+          <li className="relative" ref={servicesRef}>
+            <button 
+              className={`flex items-center ${getActiveClass("/services")}`}
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+            >
+              Services <ChevronDown size={18} className="ml-1" />
+            </button>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden py-4">
-            <div className="flex flex-col space-y-4">
-              {menuItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-sm transition-colors ${
-                    activeSection === item.id ? "text-purple-400" : "text-gray-300 hover:text-white"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+            {isServicesOpen && (
+              <ul className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg">
+                <li><Link href="/services/customization" className="block px-4 py-2 text-black hover:bg-[#FAE7E9] hover:text-black rounded-md">Salesforce Customization</Link></li>
+                <li><Link href="/services/implementation" className="block px-4 py-2 text-black hover:bg-[#FAE7E9] hover:text-black rounded-md">Salesforce Implementation</Link></li>
+                <li><Link href="/services/managed-package" className="block px-4 py-2 text-black hover:bg-[#FAE7E9] hover:text-black rounded-md">Managed Package Development</Link></li>
+              </ul>
+            )}
+          </li>
+
+          {/* Solutions Dropdown */}
+          <li className="relative" ref={solutionsRef}>
+            <button 
+              className={`flex items-center ${getActiveClass("/solutions")}`}
+              onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+            >
+              Solutions <ChevronDown size={18} className="ml-1" />
+            </button>
+
+            {isSolutionsOpen && (
+              <ul className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg">
+                <li><Link href="/solutions/industry" className="block px-4 py-2 text-black hover:bg-[#FAE7E9] hover:text-black rounded-md">Industry Solutions</Link></li>
+                <li><Link href="/solutions/business" className="block px-4 py-2 text-black hover:bg-[#FAE7E9] hover:text-black rounded-md">Business Solutions</Link></li>
+                <li><Link href="/solutions/enterprise" className="block px-4 py-2 text-black hover:bg-[#FAE7E9] hover:text-black rounded-md">Enterprise Solutions</Link></li>
+              </ul>
+            )}
+          </li>
+
+          <li><Link href="/contact" className={getActiveClass("/contact")}>Contact</Link></li>
+        </ul>
       </div>
-    </nav>
-  )
-}
 
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md py-4">
+          <ul className="flex flex-col items-center space-y-4">
+            <li><Link href="/" className={getActiveClass("/")} onClick={() => setIsOpen(false)}>Home</Link></li>
+            <li><Link href="/about" className={getActiveClass("/about")} onClick={() => setIsOpen(false)}>About Us</Link></li>
+
+            {/* Mobile Services Dropdown */}
+            <li className="w-full text-center">
+              <button 
+                className={`flex justify-center items-center w-full ${getActiveClass("/services")}`}
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+              >
+                Services <ChevronDown size={18} className="ml-1" />
+              </button>
+              {isServicesOpen && (
+                <ul className="bg-[#FAE7E9] py-2 rounded-md mt-2 p-2">
+                  <li><Link href="/services/customization" className="block px-4 py-2 text-black hover:text-#DB1139 rounded-md">Salesforce Customization</Link></li>
+                  <li><Link href="/services/implementation" className="block px-4 py-2 text-black hover:text-#DB1139 rounded-md">Salesforce Implementation</Link></li>
+                  <li><Link href="/services/managed-package" className="block px-4 py-2 text-black hover:text-#DB1139 rounded-md">Managed Package Development</Link></li>
+                </ul>
+              )}
+            </li>
+
+            {/* Mobile Solutions Dropdown */}
+            <li className="w-full text-center">
+              <button 
+                className={`flex justify-center items-center w-full ${getActiveClass("/solutions")}`}
+                onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
+              >
+                Solutions <ChevronDown size={18} className="ml-1" />
+              </button>
+              {isSolutionsOpen && (
+                <ul className="bg-[#FAE7E9] py-2 rounded-md mt-2 p-2">
+                  <li><Link href="/solutions/industry" className="block px-4 py-2 text-black hover:text-#DB1139 rounded-md">Industry Solutions</Link></li>
+                  <li><Link href="/solutions/business" className="block px-4 py-2 text-black hover:text-#DB1139 rounded-md">Business Solutions</Link></li>
+                  <li><Link href="/solutions/enterprise" className="block px-4 py-2 text-black hover:text-#DB1139 rounded-md">Enterprise Solutions</Link></li>
+                </ul>
+              )}
+            </li>
+
+            <li><Link href="/contact" className={getActiveClass("/contact")} onClick={() => setIsOpen(false)}>Contact</Link></li>
+          </ul>
+        </div>
+      )}
+    </nav>
+  );
+}

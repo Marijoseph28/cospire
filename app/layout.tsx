@@ -1,7 +1,6 @@
-import type { ReactNode } from "react"
-import "./globals.css"
-// import localFont from 'next/font/local'
+import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import "./globals.css"
 
 // const gilSans = localFont({
 //   src: [
@@ -19,16 +18,18 @@ const poppins = Poppins({
 export default function RootLayout({
   children,
 }: {
-  children: ReactNode
+  children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={poppins.className}>
+    <html lang="en">
       <body className="antialiased">{children}</body>
     </html>
   )
 }
 
 
+
+import './globals.css'
 
 export const metadata = {
       generator: 'v0.dev'
