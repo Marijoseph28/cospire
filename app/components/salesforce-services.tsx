@@ -3,7 +3,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 const servicesData = [
     {
         id: 1,
-        title: "Sales Force Customization",
+        title: "SalesForce Customization",
         subtitle: "Bespoke Solutions, Tailored to Your Business Imperatives.",
         description: "Welcome. At Cospire Technologies, we recognise that in today's dynamic business environment, a standardised, off-the-shelf Salesforce implementation simply won't cut the mustard. Each enterprise possesses unique operational nuances and strategic objectives, necessitating a tailored approach. Thus, we offer comprehensive Salesforce customisation services, meticulously designed to align with your specific requirements.",
         image: "./images/salesforce-solutions/services-1.png",
@@ -11,7 +11,7 @@ const servicesData = [
     },
     {
         id: 2,
-        title: "Sales Force Implementation",
+        title: "SalesForce Implementation",
         subtitle: "Crafting Your Digital Engine for Business Supremacy.",
         description: "The implementation of Salesforce is a pivotal undertaking that can significantly enhance your business's operational efficiency and productivity. Whether you're a burgeoning startup or a well-established enterprise, integrating Salesforce can streamline your sales processes, elevate customer satisfaction, and bolster your bottom line. ",
         image: "./images/salesforce-solutions/services-2.png",

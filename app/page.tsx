@@ -27,8 +27,8 @@ export default function Page() {
       <IndustrySpecialisations />
       <WhatMakesUsDifferent />
       <CoreCommitment />
-      <Resources />
-      <Testimonials />
+      {/* <Resources /> */}
+      {/* <Testimonials /> */}
       <ContactForm />
     </>
   )
