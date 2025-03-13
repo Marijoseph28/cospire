@@ -3,7 +3,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 const servicesData = [
     {
         id: 1,
-        title: "SalesForce Customization",
+        title: "Salesforce Customization",
         subtitle: "Bespoke Solutions, Tailored to Your Business Imperatives.",
         description: "Welcome. At Cospire Technologies, we recognise that in today's dynamic business environment, a standardised, off-the-shelf Salesforce implementation simply won't cut the mustard. Each enterprise possesses unique operational nuances and strategic objectives, necessitating a tailored approach. Thus, we offer comprehensive Salesforce customisation services, meticulously designed to align with your specific requirements.",
         image: "./images/salesforce-solutions/services-1.png",
