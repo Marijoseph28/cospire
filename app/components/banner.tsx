@@ -6,14 +6,14 @@ export default function Banner() {
     return (
         <div 
             className="relative w-full h-[500px] sm:h-[500px] md:h-[600px] lg:h-[700px] bg-cover bg-center flex items-center pl-4 sm:pl-8 md:pl-12 lg:pl-16"
-            style={{ backgroundImage: "url('/images/banner.png')" }}
+            style={{ backgroundImage: "url('./images/banner.png')" }}
         >
             {/* Overlay for better readability */}
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
             {/* Text Content */}
             <div className="relative z-10 container text-white text-left">
-                <Image src="/images/salesforce-partner-logo.png" className="mb-3" alt="cospire-logo" width={157} height={45} />
+                <Image src="./images/salesforce-partner-logo.png" className="mb-3" alt="cospire-logo" width={157} height={45} />
 
                 <h1 className="text-3xl sm:text-4xl md:text-[45px] font-bold leading-tight md:leading-[52px] mb-5">
                     Strategic Salesforce <br className="hidden sm:block" />
