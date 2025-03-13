@@ -16,7 +16,7 @@ export default function AboutUs() {
                 
                 {/* Right Side - Image Section */}
                 <div className="col-span-12 md:col-span-5 h-full">
-                    <img src="/images/about-us/about-us-img.png" alt="About Us" className="w-full h-full rounded-lg" />
+                    <img src="./images/about-us/about-us-img.png" alt="About Us" className="w-full h-full rounded-lg" />
                 </div>
             </div>
         </section>
