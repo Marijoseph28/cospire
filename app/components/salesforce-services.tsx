@@ -11,7 +11,7 @@ const servicesData = [
     },
     {
         id: 2,
-        title: "SalesForce Implementation",
+        title: "Salesforce Implementation",
         subtitle: "Crafting Your Digital Engine for Business Supremacy.",
         description: "The implementation of Salesforce is a pivotal undertaking that can significantly enhance your business's operational efficiency and productivity. Whether you're a burgeoning startup or a well-established enterprise, integrating Salesforce can streamline your sales processes, elevate customer satisfaction, and bolster your bottom line. ",
         image: "./images/salesforce-solutions/services-2.png",
@@ -27,7 +27,7 @@ const servicesData = [
     },
     {
         id: 4,
-        title: "Lightening Migration",
+        title: "Lightning Migration",
         subtitle: "Elevating Your Salesforce Organisation to Peak Performance.",
         description: "Welcome to our Lightning Migration Services. We help businesses transition seamlessly to the Salesforce Lightning Experience, enhancing productivity and collaboration. Our certified Salesforce experts ensure a smooth migration with minimal disruption to your operations.",
         image: "./images/salesforce-solutions/services-3.png",
