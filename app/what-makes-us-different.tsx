@@ -5,28 +5,28 @@ import { BsArrowRightCircle } from "react-icons/bs";
 const differenceData = [
     {
         id: 1,
-        image: "/images/different/img-1.png",
+        image: "./images/different/img-1.png",
         title: "Personalized Solutions",
         description: "We don’t believe in one-size-fits-all. Every business is unique, and so are our solutions.",
         url: "/"
     },
     {
         id: 2,
-        image: "/images/different/img-2.png",
+        image: "./images/different/img-2.png",
         title: "Rapid Deployment ",
         description: "Our agile methodology ensures faster implementation with minimal downtime.",
         url: "/"
     },
     {
         id: 3,
-        image: "/images/different/img-3.png",
+        image: "./images/different/img-3.png",
         title: "AI & Data Insights",
         description: "We integrate AI-powered analytics and predictive insights to help you make data-driven business decisions.",
         url: "/"
     },
     {
         id: 4,
-        image: "/images/different/img-4.png",
+        image: "./images/different/img-4.png",
         title: "Proven Track Record",
         description: "With a high customer retention rate and positive client testimonials, we take pride in delivering excellence.",
         url: "/"

@@ -6,7 +6,7 @@ const servicesData = [
         title: "Sales Force Customization",
         subtitle: "Bespoke Solutions, Tailored to Your Business Imperatives.",
         description: "Welcome. At Cospire Technologies, we recognise that in today's dynamic business environment, a standardised, off-the-shelf Salesforce implementation simply won't cut the mustard. Each enterprise possesses unique operational nuances and strategic objectives, necessitating a tailored approach. Thus, we offer comprehensive Salesforce customisation services, meticulously designed to align with your specific requirements.",
-        image: "/images/salesforce-solutions/services-1.png",
+        image: "./images/salesforce-solutions/services-1.png",
         reverse: false
     },
     {
@@ -14,7 +14,7 @@ const servicesData = [
         title: "Sales Force Implementation",
         subtitle: "Crafting Your Digital Engine for Business Supremacy.",
         description: "The implementation of Salesforce is a pivotal undertaking that can significantly enhance your business's operational efficiency and productivity. Whether you're a burgeoning startup or a well-established enterprise, integrating Salesforce can streamline your sales processes, elevate customer satisfaction, and bolster your bottom line. ",
-        image: "/images/salesforce-solutions/services-2.png",
+        image: "./images/salesforce-solutions/services-2.png",
         reverse: true
     },
     {
@@ -22,7 +22,7 @@ const servicesData = [
         title: "Salesforce Managed Package Development",
         subtitle: "Salesforce Managed Package Development: Crafting Bespoke Applications for Your Salesforce Ecosystem.",
         description: "Welcome to our dedicated Salesforce Managed Package Development Services page. Our team, comprising seasoned Salesforce developers, is primed to assist you in developing robust, customisable, and scalable managed packages for your Salesforce organisation.",
-        image: "/images/salesforce-solutions/services-7.png",
+        image: "./images/salesforce-solutions/services-7.png",
         reverse: false
     },
     {
@@ -30,7 +30,7 @@ const servicesData = [
         title: "Lightening Migration",
         subtitle: "Elevating Your Salesforce Organisation to Peak Performance.",
         description: "Welcome to our Lightning Migration Services. We help businesses transition seamlessly to the Salesforce Lightning Experience, enhancing productivity and collaboration. Our certified Salesforce experts ensure a smooth migration with minimal disruption to your operations.",
-        image: "/images/salesforce-solutions/services-3.png",
+        image: "./images/salesforce-solutions/services-3.png",
         reverse: true
     },
     {
@@ -38,7 +38,7 @@ const servicesData = [
         title: "Salesforce Org Split & Merge Services",
         subtitle: "Streamlining Your Salesforce Ecosystem for Optimal Performance.",
         description: "We specialize in Salesforce org split and merge services, helping businesses manage their Salesforce instances more efficiently. Our certified experts ensure seamless execution of org splits and merges, optimizing Salesforce organizations to meet your specific business needs.",
-        image: "/images/salesforce-solutions/services-4.png",
+        image: "./images/salesforce-solutions/services-4.png",
         reverse: false
     },
     {
@@ -46,7 +46,7 @@ const servicesData = [
         title: "Salesforce Org Merge Services",
         subtitle: "Unifying for Strategic Advantage.",
         description: "Our org merge services consolidate multiple Salesforce instances into one, ideal for mergers or acquisitions. We analyze your orgs, identify data and customizations for consolidation, and create a seamless execution strategy. Using advanced tools, we ensure secure and accurate data merging with minimal disruption.",
-        image: "/images/salesforce-solutions/services-5.png",
+        image: "./images/salesforce-solutions/services-5.png",
         reverse: true
     },
     {
@@ -54,7 +54,7 @@ const servicesData = [
         title: "Salesforce Org Merge Services",
         subtitle: "Ensuring Peak Performance and Uninterrupted Operational Excellence.",
         description: "We handle everything from implementation to ongoing maintenance, ensuring your platform stays up-to-date and optimized. Our certified experts manage updates, customizations, integrations, and provide proactive monitoring, training, and dedicated support to keep your business running smoothly.",
-        image: "/images/salesforce-solutions/services-6.png",
+        image: "./images/salesforce-solutions/services-6.png",
         reverse: false
     },
 ];

@@ -3,7 +3,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 const featuresData = [
     {
         id: 1,
-        icon: "/images/salesforce-services/icon-1.png",
+        icon: "./images/salesforce-services/icon-1.png",
         title: "Salesforce Sales Cloud",
         subtitle: "Turbocharge Your Deals, Sorted!",
         description: "Salesforce Sales Cloud streamlines sales and enhances efficiency, with full support and training.",
@@ -11,7 +11,7 @@ const featuresData = [
     },
     {
         id: 2,
-        icon: "/images/salesforce-services/icon-2.png",
+        icon: "./images/salesforce-services/icon-2.png",
         title: "Salesforce Service Cloud",
         subtitle: "Keep Your Punters Sweet, 24/7",
         description: "Salesforce Service Cloud enhances customer service with personalized support, automation, and insights.",
@@ -19,7 +19,7 @@ const featuresData = [
     },
     {
         id: 3,
-        icon: "/images/salesforce-services/icon-3.png",
+        icon: "./images/salesforce-services/icon-3.png",
         title: "Marketing Cloud",
         subtitle: "Your Marketing Game, Top Drawer",
         description: "Salesforce Marketing Cloud helps create personalized campaigns with ongoing support for better results.",
@@ -27,7 +27,7 @@ const featuresData = [
     },
     {
         id: 4,
-        icon: "/images/salesforce-services/icon-4.png",
+        icon: "./images/salesforce-services/icon-4.png",
         title: "Experience Cloud",
         subtitle: "Your Go-To for Salesforce Builds.",
         description: "Tailored, seamless digital experiences powered by Salesforce Experience Cloud for enhanced engagement and growth.",
@@ -35,7 +35,7 @@ const featuresData = [
     },
     {
         id: 5,
-        icon: "/images/salesforce-services/icon-5.png",
+        icon: "./images/salesforce-services/icon-5.png",
         title: "Salesforce Health Cloud",
         subtitle: "Patient Care, Sorted, Safe as Houses.",
         description: "Salesforce Health Cloud streamlines patient care with secure, personalized systems, offering full training and ongoing support.",
@@ -43,7 +43,7 @@ const featuresData = [
     },
     {
         id: 6,
-        icon: "/images/salesforce-services/icon-6.png",
+        icon: "./images/salesforce-services/icon-6.png",
         title: "Salesforce Education Cloud",
         subtitle: "Educational Game, Sorted, Proper.",
         description: "Salesforce Education Cloud streamlines tracking and communication with full support and training.",

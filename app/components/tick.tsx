@@ -3,22 +3,22 @@ export default function WhyTick() {
         {
             id: 1,
             title: "Trust",
-            image: "/images/tick/t-trust.png",
+            image: "./images/tick/t-trust.png",
         },
         {
             id: 2,
             title: "Integrity",
-            image: "/images/tick/i-integrity.png",
+            image: "./images/tick/i-integrity.png",
         },
         {
             id: 3,
             title: "Credibility",
-            image: "/images/tick/c-credibility.png",
+            image: "./images/tick/c-credibility.png",
         },
         {
             id: 4,
             title: "Knowledge on Business",
-            image: "/images/tick/k-knowledge-on-business.png",
+            image: "./images/tick/k-knowledge-on-business.png",
         },
     ];
     return (

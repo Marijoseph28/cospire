@@ -3,17 +3,17 @@ import Image from "next/image";
 const commitmentData = [
     {
         id: 1,
-        icon: "/images/commitment/experts.png",
+        icon: "./images/commitment/experts.png",
         title: "Assured Reliability"
     },
     {
         id: 2,
-        icon: "/images/commitment/premium-quality.png",
+        icon: "./images/commitment/premium-quality.png",
         title: "Premium Quality"
     },
     {
         id: 3,
-        icon: "/images/commitment/reliability.png",
+        icon: "./images/commitment/reliability.png",
         title: "Empowered Experts"
     }
 ];

@@ -4,13 +4,13 @@ import { BsArrowRightCircle } from "react-icons/bs";
 const resourcesData = [
   {
     id: 1,
-    image: "/images/resources/blog-cover-image.png",
+    image: "./images/resources/blog-cover-image.png",
     title: "Blogs",
     description: "Explore insightful articles to enhance your knowledge – read more here.",
   },
   {
     id: 2,
-    image: "/images/resources/video-cover-image.png",
+    image: "./images/resources/video-cover-image.png",
     title: "CRM Best Practices",
     description: "Learn how to optimize your CRM strategy with these best practices.",
   },

@@ -3,7 +3,7 @@ export default function WhatWeAreAceAt() {
         <section className="bg-white py-16 relative">
             <div className="absolute inset-0 bg-no-repeat bg-cover scale-x-[-1]"
                 style={{
-                    backgroundImage: "url('/images/before-img.png')",
+                    backgroundImage: "url('./images/before-img.png')",
                     backgroundPosition: "right top",
                     backgroundSize: "50% auto"
                 }}></div>
@@ -34,7 +34,7 @@ export default function WhatWeAreAceAt() {
                     </div>
                     {/* Right Side - Image */}
                     <div className="col-span-12 md:col-span-5">
-                        <img src="/images/about-us/about-us-img.png" alt="What We Are Ace At" className="w-full h-auto rounded-lg" />
+                        <img src="./images/about-us/about-us-img.png" alt="What We Are Ace At" className="w-full h-auto rounded-lg" />
                     </div>
                 </div>
             </div>

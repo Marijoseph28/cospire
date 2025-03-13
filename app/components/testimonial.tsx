@@ -11,14 +11,14 @@ const testimonials = [
     text: "We are extremely pleased with the service provided by Cospire in the implementation of our Salesforce program. Their deep understanding of Salesforce, combined with their ability to accurately map our requirements, has ensured a smooth and successful implementation. The team's enthusiasm and proactivity throughout the process have been commendable. We highly recommend Cospire to any prospective clients. Best wishes to their team.",
     author: "Eswarakrishnan.D",
     position: "VP - Epsilon",
-    logo: "/images/epsilon-logo.png",
+    logo: "./images/epsilon-logo.png",
   },
   {
     id: 2,
     text: "We are extremely pleased with the service provided by Cospire in the implementation of our Salesforce program. Their deep understanding of Salesforce, combined with their ability to accurately map our requirements, has ensured a smooth and successful implementation. The team's enthusiasm and proactivity throughout the process have been commendable. We highly recommend Cospire to any prospective clients. Best wishes to their team.",
     author: "Eswarakrishnan.D",
     position: "VP - Epsilon",
-    logo: "/images/epsilon-logo.png",
+    logo: "./images/epsilon-logo.png",
   },
 ];
 

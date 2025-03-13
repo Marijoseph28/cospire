@@ -3,12 +3,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const industryData = [
-    { id: 1, image: "/images/industry-specialisations/specialisations-1.png", title: "Healthcare" },
-    { id: 2, image: "/images/industry-specialisations/specialisations-1.png", title: "Education" },
-    { id: 3, image: "/images/industry-specialisations/specialisations-1.png", title: "Finance" },
-    { id: 4, image: "/images/industry-specialisations/specialisations-1.png", title: "Retail Consumer Goods" },
-    { id: 5, image: "/images/industry-specialisations/specialisations-1.png", title: "Manufacturing" },
-    { id: 6, image: "/images/industry-specialisations/specialisations-1.png", title: "Technology" }
+    { id: 1, image: "./images/industry-specialisations/specialisations-1.png", title: "Healthcare" },
+    { id: 2, image: "./images/industry-specialisations/specialisations-1.png", title: "Education" },
+    { id: 3, image: "./images/industry-specialisations/specialisations-1.png", title: "Finance" },
+    { id: 4, image: "./images/industry-specialisations/specialisations-1.png", title: "Retail Consumer Goods" },
+    { id: 5, image: "./images/industry-specialisations/specialisations-1.png", title: "Manufacturing" },
+    { id: 6, image: "./images/industry-specialisations/specialisations-1.png", title: "Technology" }
 ];
 
 export default function IndustrySpecialisations() {

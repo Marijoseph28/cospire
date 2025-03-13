@@ -20,7 +20,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center">
         {/* Left Side Image */}
         <div className="w-full">
-          <Image src="/images/contact-img.png" alt="Contact Us" width={500} height={500} className="w-full" />
+          <Image src="./images/contact-img.png" alt="Contact Us" width={500} height={500} className="w-full" />
         </div>
 
         {/* Right Side Contact Form */}

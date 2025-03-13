@@ -38,7 +38,7 @@ export default function Navbar() {
     <nav className="bg-white shadow-md p-4 fixed w-full top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="text-xl font-bold text-gray-900">
-          <Image src="/images/cospire-logo.png" alt="cospire-logo" width={100} height={22} />
+          <Image src="./images/cospire-logo.png" alt="cospire-logo" width={100} height={22} />
         </Link>
         
         {/* Mobile Menu Button */}
